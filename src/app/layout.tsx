@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import { Syne, Inter } from 'next/font/google';
+import { Suspense } from 'react';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ParticleBackground from '@/components/ParticleBackground';
 import CursorGlitter from '@/components/CursorGlitter';
-import ScrollToTop from '@/components/ScrollToTop';
+import { NavigationEvents } from '@/components/NavigationEvents';
 import { content } from '@/config/content';
 
 // ── Fonts ─────────────────────────────────────────────────────────────────────
@@ -61,6 +62,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${syne.variable} ${inter.variable} h-full`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-bulls-black text-bulls-white font-body antialiased">
         {/* Particle background — canvas behind all content */}
@@ -69,7 +71,9 @@ export default function RootLayout({
         {/* Cursor glitter — canvas above all content, pointer-events-none */}
         <CursorGlitter />
 
-        <ScrollToTop />
+        <Suspense fallback={null}>
+          <NavigationEvents />
+        </Suspense>
 
         {/* Sticky header */}
         <Header />
