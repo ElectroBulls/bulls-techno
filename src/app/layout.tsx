@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ParticleBackground from '@/components/ParticleBackground';
 import CursorGlitter from '@/components/CursorGlitter';
+import ScrollToTop from '@/components/ScrollToTop';
 import { content } from '@/config/content';
 
 // ── Fonts ─────────────────────────────────────────────────────────────────────
@@ -67,6 +68,8 @@ export default function RootLayout({
 
         {/* Cursor glitter — canvas above all content, pointer-events-none */}
         <CursorGlitter />
+
+        <ScrollToTop />
 
         {/* Sticky header */}
         <Header />
