@@ -1,26 +1,133 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* ── Brand Colors ── */
+  --color-bulls-black: #0a0a0a;
+  --color-bulls-blue: #66b6e7;
+  --color-bulls-blue-hover: #3a8abf;
+  --color-bulls-card: #1a1f2e;
+  --color-bulls-light: #f0f4f8;
+  --color-bulls-body: #2d3748;
+  --color-bulls-red: #c5231e;
+  --color-bulls-process: #2596be;
+  --color-bulls-white: #ffffff;
+
+  /* ── Border Radius tokens ── */
+  --radius-card: 0.75rem;
+  --radius-btn: 0.5rem;
+
+  /* ── Named Animations ── */
+  --animate-fade-up: fade-up 0.5s ease forwards;
+  --animate-fade-in: fade-in 0.4s ease forwards;
+  --animate-slide-in: slide-in 0.3s ease forwards;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* ── Fonts (reference CSS vars injected by next/font in layout.tsx) ── */
+  --font-heading: var(--font-syne);
+  --font-body: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ── Keyframes ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes crossfade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Global Base ── */
+html {
+  scroll-behavior: smooth;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* ── Shimmer Card Hover Effect ──
+   Usage: add className="shimmer-card" to any card element.
+   A diagonal blue-to-white shine sweeps across on hover.
+*/
+@keyframes shimmer-diagonal {
+  from { transform: translate(-100%, -100%); }
+  to   { transform: translate(100%, 100%); }
+}
+
+.shimmer-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    transparent              25%,
+    rgba(102, 182, 231, 0.15) 40%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(102, 182, 231, 0.15) 60%,
+    transparent              75%
+  );
+  transform: translate(-100%, -100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.shimmer-card:hover::after {
+  animation: shimmer-diagonal 0.75s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ── Card Glow on Hover ── */
+.card-glow {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card-glow:hover {
+  box-shadow: 0 8px 32px rgba(102, 182, 231, 0.14);
+  transform: translateY(-2px);
+}
+
+/* ── Crossfade animation for hero slider ── */
+.slide-fade-in {
+  animation: crossfade 0.8s ease forwards;
+}
+
+/* ── Reduce Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .shimmer-card::after {
+    display: none;
+  }
+
+  .card-glow:hover {
+    transform: none;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
