@@ -1,9 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { content } from '@/config/content';
+import NavLink from '@/components/NavLink';
 
 const { nav } = content;
 
@@ -32,7 +32,7 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-40">
           {/* Logo */}
-          <Link href="/" className="flex-shrink-0 flex items-center">
+          <NavLink href="/" className="flex-shrink-0 flex items-center">
             {!logoError && content.site.logoPath ? (
               <Image
                 src={content.site.logoPath}
@@ -48,18 +48,18 @@ export default function Header() {
                 {nav.brand}
               </span>
             )}
-          </Link>
+          </NavLink>
 
           {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1" aria-label="Main navigation">
             {nav.links.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
                 className="px-3 py-2 text-lg font-body text-white/75 hover:text-bulls-blue transition-colors duration-200 rounded"
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
           </nav>
 
@@ -141,14 +141,14 @@ export default function Header() {
         <div className="lg:hidden border-t border-white/10 bg-bulls-black animate-fade-in">
           <div className="px-4 py-4 space-y-1">
             {nav.links.map((link) => (
-              <Link
+              <NavLink
                 key={link.href}
                 href={link.href}
                 onClick={closeMobile}
                 className="block px-3 py-2.5 text-sm font-body text-white/75 hover:text-bulls-blue hover:bg-white/5 rounded transition-colors duration-200"
               >
                 {link.label}
-              </Link>
+              </NavLink>
             ))}
             <div className="pt-3 border-t border-white/10 mt-3 space-y-1">
               <p className="px-3 text-xs text-white/40 uppercase tracking-wider font-body mb-2">

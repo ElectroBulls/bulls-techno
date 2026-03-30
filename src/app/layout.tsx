@@ -1,12 +1,10 @@
 import type { Metadata } from 'next';
 import { Syne, Inter } from 'next/font/google';
-import { Suspense } from 'react';
 import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ParticleBackground from '@/components/ParticleBackground';
 import CursorGlitter from '@/components/CursorGlitter';
-import { NavigationEvents } from '@/components/NavigationEvents';
 import { content } from '@/config/content';
 
 // ── Fonts ─────────────────────────────────────────────────────────────────────
@@ -70,10 +68,6 @@ export default function RootLayout({
 
         {/* Cursor glitter — canvas above all content, pointer-events-none */}
         <CursorGlitter />
-
-        <Suspense fallback={null}>
-          <NavigationEvents />
-        </Suspense>
 
         {/* Sticky header */}
         <Header />

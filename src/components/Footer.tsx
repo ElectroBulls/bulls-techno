@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { content } from '@/config/content';
+import NavLink from '@/components/NavLink';
 
 const { footer, site } = content;
 
@@ -27,12 +27,12 @@ export default function Footer() {
             <ul className="space-y-2">
               {footer.quickLinks.map((link) => (
                 <li key={link.href}>
-                  <Link
+                  <NavLink
                     href={link.href}
                     className="text-sm text-white/60 hover:text-bulls-blue transition-colors duration-200"
                   >
                     {link.label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -100,9 +100,9 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-2">
           <p className="text-xs text-white/40">{footer.copyright}</p>
           <p className="text-xs text-white/40">
-            <Link href="/privacy" className="hover:text-bulls-blue transition-colors duration-200">
+            <NavLink href="/privacy" className="hover:text-bulls-blue transition-colors duration-200">
               Privacy Policy
-            </Link>
+            </NavLink>
           </p>
         </div>
         {/* Powered by — centered, every page, accent red */}
