@@ -20,7 +20,7 @@ export const content = {
     calendly: "https://calendly.com/shailendra_earth",
     contactFormEmail: "Shailendra_Earth@yahoo.com",
     logoPath: "/images/logo.png",
-    faviconPath: "/images/favicon.png",
+    faviconPath: "/favicon.png",
   },
 
   // ── Navigation ──────────────────────────────────────────────────────────────

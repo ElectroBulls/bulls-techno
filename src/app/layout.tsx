@@ -41,8 +41,11 @@ export const metadata: Metadata = {
     description: content.site.description,
   },
   icons: {
-    icon: content.site.faviconPath,
-    apple: content.site.faviconPath,
+    icon: [
+      { url: '/favicon.png', type: 'image/png' },
+    ],
+    apple: '/favicon.png',
+    shortcut: '/favicon.png',
   },
   robots: {
     index: true,
