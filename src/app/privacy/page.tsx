@@ -12,7 +12,7 @@ export default function PrivacyPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-bulls-card via-bulls-black to-bulls-black" style={{ paddingTop: 'var(--header-height)' }}>
+      <section className="pt-[162px] pb-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-bulls-card via-bulls-black to-bulls-black">
         <div className="max-w-4xl mx-auto">
           <h1 className="font-heading font-extrabold text-4xl sm:text-5xl text-bulls-white mb-3">
             {privacy.hero.heading}
