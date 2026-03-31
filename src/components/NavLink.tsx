@@ -14,11 +14,13 @@ export default function NavLink({ href, children, className, onClick }: NavLinkP
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
     onClick?.()
     router.push(href)
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    }, 100)
   }
 
   return (
