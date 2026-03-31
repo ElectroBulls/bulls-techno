@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import NavLink from '@/components/NavLink';
 import { content } from '@/config/content';
 
 export const metadata: Metadata = {
@@ -66,7 +66,7 @@ export default function BlogsPage() {
                 </p>
 
                 {/* Read more */}
-                <Link
+                <NavLink
                   href={`/blogs/${post.slug}`}
                   className="inline-flex items-center gap-1.5 text-sm font-body font-medium text-bulls-blue hover:text-bulls-blue-hover transition-colors duration-200 group mt-auto"
                 >
@@ -81,7 +81,7 @@ export default function BlogsPage() {
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
-                </Link>
+                </NavLink>
               </article>
             );
           })}

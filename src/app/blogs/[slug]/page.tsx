@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import NavLink from '@/components/NavLink';
 import { content } from '@/config/content';
 import { getSanityPost } from '@/sanity/client';
 
@@ -85,7 +85,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* ── Hero ── */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-bulls-card via-bulls-black to-bulls-black">
         <div className="max-w-3xl mx-auto">
-          <Link
+          <NavLink
             href="/blogs"
             className="inline-flex items-center gap-1.5 text-sm font-body text-white/50 hover:text-bulls-blue transition-colors duration-200 mb-6 group"
           >
@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: Props) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
             Back to Insights
-          </Link>
+          </NavLink>
 
           {serviceItem && (
             <span className="inline-block font-body text-xs text-bulls-blue bg-bulls-blue/10 border border-bulls-blue/20 rounded-full px-3 py-1 mb-4">

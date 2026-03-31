@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
 import HeroSlider from '@/components/HeroSlider';
+import NavLink from '@/components/NavLink';
 import { content } from '@/config/content';
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function HomePage() {
           <p className="font-body text-base sm:text-lg text-white/70 leading-relaxed mb-8">
             {home.whatWeDo.body}
           </p>
-          <Link
+          <NavLink
             href={home.whatWeDo.ctaHref}
             className="inline-flex items-center gap-2 bg-bulls-blue hover:bg-bulls-blue-hover text-bulls-black font-body font-semibold px-6 py-3 rounded-btn transition-colors duration-200"
           >
@@ -35,7 +35,7 @@ export default function HomePage() {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
-          </Link>
+          </NavLink>
         </div>
       </section>
 
@@ -53,9 +53,9 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {content.services.items.map((service) => (
-              <Link
+              <NavLink
                 key={service.id}
-                href={`/services#${service.id}`}
+                href="/services"
                 className="shimmer-card card-glow bg-bulls-card border border-white/[0.08] rounded-card p-6 block group"
               >
                 <div className="w-8 h-0.5 bg-bulls-blue mb-4 transition-all duration-200 group-hover:w-12" />
@@ -71,7 +71,7 @@ export default function HomePage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>
                 </span>
-              </Link>
+              </NavLink>
             ))}
           </div>
         </div>
