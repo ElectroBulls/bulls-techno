@@ -50,8 +50,12 @@
 }
 
 /* ── Global Base ── */
+:root {
+  --header-height: 161px;
+}
+
 html {
-  scroll-padding-top: 160px;
+  scroll-padding-top: var(--header-height);
 }
 
 *, *::before, *::after {

@@ -14,7 +14,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero Slider ── */}
-      <section className="pt-40">
+      <section style={{ paddingTop: 'var(--header-height)' }}>
         <HeroSlider />
       </section>
 
