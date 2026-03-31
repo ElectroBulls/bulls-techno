@@ -13,7 +13,7 @@ export default function ServicesPage() {
   return (
     <>
       {/* ── Hero ── */}
-      <section className="pt-[162px] pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-bulls-card via-bulls-black to-bulls-black">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-bulls-card via-bulls-black to-bulls-black">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl text-bulls-white mb-5">
             {services.hero.heading}

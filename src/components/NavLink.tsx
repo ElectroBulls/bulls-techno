@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from "next/navigation"
 
 interface NavLinkProps {
   href: string
@@ -8,10 +9,12 @@ interface NavLinkProps {
 }
 
 export default function NavLink({ href, children, className, onClick }: NavLinkProps) {
+  const router = useRouter()
+
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
     onClick?.()
-    window.location.href = href
+    router.push(href)
   }
 
   return (

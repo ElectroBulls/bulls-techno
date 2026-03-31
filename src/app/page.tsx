@@ -14,9 +14,7 @@ export default function HomePage() {
   return (
     <>
       {/* ── Hero Slider ── */}
-      <section className="pt-[162px]">
-        <HeroSlider />
-      </section>
+      <HeroSlider />
 
       {/* ── What We Do ── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">

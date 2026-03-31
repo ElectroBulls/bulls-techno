@@ -63,6 +63,9 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-bulls-black text-bulls-white font-body antialiased">
+        {/* Disable browser scroll restoration so every navigation starts at top */}
+        <script dangerouslySetInnerHTML={{ __html: "history.scrollRestoration='manual'" }} />
+
         {/* Particle background — canvas behind all content */}
         <ParticleBackground />
 
