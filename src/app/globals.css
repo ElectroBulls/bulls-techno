@@ -54,10 +54,6 @@
   --header-height: 162px;
 }
 
-html {
-  scroll-padding-top: var(--header-height);
-}
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
