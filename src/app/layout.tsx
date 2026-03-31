@@ -47,6 +47,9 @@ export const metadata: Metadata = {
     apple: '/favicon.png',
     shortcut: '/favicon.png',
   },
+  verification: {
+    google: '6wyDL0YuIoY-0Q2lO5FMIDL29ww982W6MULgWzuwyik',
+  },
   robots: {
     index: true,
     follow: true,
