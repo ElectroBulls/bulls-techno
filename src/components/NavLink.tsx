@@ -1,6 +1,4 @@
 "use client"
-import Link from "next/link"
-import { useRouter } from "next/navigation"
 
 interface NavLinkProps {
   href: string
@@ -10,17 +8,10 @@ interface NavLinkProps {
 }
 
 export default function NavLink({ href, children, className, onClick }: NavLinkProps) {
-  const router = useRouter()
-
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault()
     onClick?.()
-    router.push(href)
-    setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-      document.documentElement.scrollTop = 0
-      document.body.scrollTop = 0
-    }, 100)
+    window.location.href = href
   }
 
   return (
