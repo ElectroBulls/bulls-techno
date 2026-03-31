@@ -50,6 +50,10 @@
 }
 
 /* ── Global Base ── */
+html {
+  scroll-padding-top: 160px;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }

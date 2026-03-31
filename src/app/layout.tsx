@@ -73,7 +73,7 @@ export default function RootLayout({
         <Header />
 
         {/* Page content */}
-        <main className="relative z-10 flex-1 pt-40">{children}</main>
+        <main className="relative z-10 flex-1">{children}</main>
 
         {/* Footer — appears on every page (Powered by Capital Force Solutions) */}
         <Footer />
